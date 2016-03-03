@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 library(graphics)
 file_name = (commandArgs(TRUE)[1])
 out_file = (commandArgs(TRUE)[2])

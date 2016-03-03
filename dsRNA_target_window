@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # encoding: utf-8
 #Copyright Stephen Fletcher
-import get_ref
+import modules.get_ref as get_ref
 from collections import Counter
 import operator
 import csv
@@ -110,7 +110,7 @@ def window_analysis(aln_file,
 						#prints headers with normalised aligned sRNAs
 				mycsv.writerow([key,value])	
 	out_pdf = out_file.split('.')[0]
-	R_command = 'Rscript ~/Software/dsRNA_target_window/heatmap.R ' + \
+	R_command = 'Rscript ./modules/heatmap.R ' + \
 		out_file + ' ' + out_pdf
 	os.system(R_command)
 	sys_command = 'open Rplots.pdf'
@@ -133,7 +133,7 @@ def calc_optimum_seq(aln_seq, win_pos, win_size):
 		.format(len(out_seq), win_pos, out_seq)	
 
 def main():
-	parser = argparse.ArgumentParser("dsRNA_target_window.py")
+	parser = argparse.ArgumentParser("dsRNA_target_window")
 	parser.add_argument('input_alignment', type=str)
 	parser.add_argument('output_file', type = str)
 	parser.add_argument('-win_size','--window_size', default = '300', type=int)
@@ -142,13 +142,12 @@ def main():
 					type=int)
 
 	args = parser.parse_args()
-	return args
+	window_analysis(args.input_alignment, 
+				args.output_file, 
+				args.window_size, 
+				args.pos_bonus_mod, 
+				args.run_bonus_mod)
 
-def run_ana():
-	a = comline()
-	window_analysis(a.input_alignment, a.output_file, a.window_size, 
-				a.pos_bonus_mod, 
-				a.run_bonus_mod)
 
 if __name__ == "__main__":
     main()
