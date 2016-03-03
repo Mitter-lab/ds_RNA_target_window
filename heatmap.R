@@ -1,5 +1,4 @@
 library(graphics)
-#setwd("~/Software/dsRNA_target_window")
 file_name = (commandArgs(TRUE)[1])
 out_file = (commandArgs(TRUE)[2])
 dsRNA_targ = read.csv(file_name, header = FALSE, row.names=1, colClasses=c("numeric","numeric"))
