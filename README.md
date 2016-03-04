@@ -1,4 +1,4 @@
-<code>usage: dsRNA_target_window [-h] [-win_size WINDOW_SIZE]
+<code>dsRNA_target_window [-h] [-win_size WINDOW_SIZE]
                            [-pos_bonus POS_BONUS_MOD]
                            [-run_bonus RUN_BONUS_MOD]
                            input_alignment output_file
