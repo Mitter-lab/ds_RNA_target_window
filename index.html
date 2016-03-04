@@ -31,27 +31,40 @@
 
       <section>
         <div id="title">
-          <h1>Ds rna target window</h1>
-          <p>Identifies optimal window for dsRNA targeting</p>
+          <h1>dsRNA Target Window</h1>
+          <p>Identifies an optimal window in a multiple alignment for dsRNA targeting</p>
           <hr>
           <span class="credits left">Project maintained by <a href="https://github.com/Mitter-lab">Mitter-lab</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
+<br><br>Developed by Stephen Fletcher @ the laboratory of Assoc. Prof. Neena Mitter, University of Queensland<br><br>
+        
+        <p><h3>Required:</h3><br>
+        
+        Python 2.7<br>
+        R<br>
+        
+        <p><h3>Installation</h3><br>
+        
+        <ul>
+        <li>Install in your path</li>
+        <li>Make executable --> <code>chmod +x path\to\ds_RNA_finder</code></li>
+        </ul>
+        <p><h3>Usage:</h3><br>
+        
+        <p><code>dsRNA_target_window input_alignment output_file [opt] </code></p><br>
 
-        <p><code>usage: dsRNA_target_window [-h] [-win_size WINDOW_SIZE]
-                           [-pos_bonus POS_BONUS_MOD]
-                           [-run_bonus RUN_BONUS_MOD]
-                           input_alignment output_file</code></p>
+<p>Positional arguments:<br>
+  <code>input_alignment</code> multiple alignment in FASTA format<br>
+  <code>output_file</code> : output .csv file<br>
+  
+  </p>
 
-<p>positional arguments:
-  input_alignment
-  output_file</p>
-
-<p>optional arguments:
-  -h, --help            show this help message and exit
-  -win_size WINDOW_SIZE, --window_size WINDOW_SIZE
-  -pos_bonus POS_BONUS_MOD, --pos_bonus_mod POS_BONUS_MOD
-  -run_bonus RUN_BONUS_MOD, --run_bonus_mod RUN_BONUS_MOD
+<p>Optional arguments:<br>
+  <code>-h</code> : show this help message and exit<br>
+  <code>-win_size</code> : dsRNA window size<br>
+  <code>-pos_bonus</code> : bonus for complete conservation as a position<br>
+  <code>-run_bonus</code> : compounding bonus for a run of consered positions<br> 
 </p>
       </section>
 
